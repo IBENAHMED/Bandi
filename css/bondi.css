@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-color: #19283f;
+    --color-white: white;
+    --color-green: #33d1cc;
+    --yellow-color: #ffc400;
+    --section-color: #eff7fa;
+    --primary-color: #0a58ca;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* Start scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* End scrollbar */
+/* Start main-title */
+.main-title::before {
+    left: 50%;
+    bottom: 18%;
+    content: "";
+    height: 2px;
+    width: 120px;
+    position: absolute;
+    transform: translateX(-50%);
+    border-bottom: 2px solid var(--color-green);
+}
+
+/* End main-title */
+/* Start Navbar*/
+.navbar {
+    background-color: var(--dark-color);
+}
+
+.navbar .navbar-toggler {
+    padding: 10px;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+    border-color: var(--color-green);
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: var(--color-white);
+}
+
+.navbar .search {
+    border-left: 1px solid var(--color-green);
+}
+
+.navbar .search svg {
+    color: var(--color-green);
+}
+
+/* End Navbar*/
+/* Start Landing */
+.landing {
+    height: calc(100vh - 72px);
+    background-color: var(--dark-color);
+}
+
+/* End Landing */
+/* Start features */
+.features .feature {
+    counter-increment: services;
+}
+
+.features .feature span::before {
+    left: 50%;
+    opacity: .1;
+    width: 100px;
+    height: 100px;
+    font-size: 150px;
+    position: absolute;
+    top: calc(0% - 120px);
+    content: counter(services);
+    transform: translateX(-50%);
+}
+
+.features .feature svg {
+    color: var(--color-green);
+    z-index: 3;
+}
+
+.features .feature>div h4 {
+    color: var(--yellow-color);
+}
+
+/* Start features */
+/* Start works */
+.works {
+    background-color: var(--section-color);
+}
+
+.works ul li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.works ul li:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.works .work {
+    position: relative;
+    overflow: hidden;
+}
+
+.works .work::before {
+    content: attr(data-work);
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background-color: var(--color-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    transform: translateX(calc(-100% - 4px));
+}
+
+.works .work:hover::before {
+    opacity: .7;
+    transform: translateX(0px);
+}
+
+/* End works */
+/* Start About */
+.About .text>div p {
+    max-width: 500px;
+}
+
+/* End About */
+/* Satrt team */
+.team {
+    background-color: var(--section-color);
+}
+
+.team .text h2 {
+    color: var(--yellow-color);
+}
+
+.team .row>div h4 {
+    background-color: var(--color-green);
+}
+
+/* End team */
+/* Start project */
+.project {
+    background-color: var(--dark-color);
+}
+
+/* End project */
+/* Start Blog */
+.blog .row .card {
+    border: 1px solid #eee;
+}
+
+/* End Blog */
+/* Start subscribe */
+.subscribe {
+    background-color: var(--yellow-color);
+}
+
+.subscribe .row input[type="email"] {
+    width: 100%;
+    outline: none;
+    background-color: var(--yellow-color);
+    border: none;
+    border-bottom: 1px solid var(--section-color);
+    padding-bottom: 10px;
+}
+
+.subscribe .row input[type="email"]::placeholder {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.subscribe .row button {
+    width: fit-content;
+}
+
+/* End subscribe */
+/* Start Footer */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer .row .graph {
+    color: var(--yellow-color);
+}
+
+footer .row .bondi {
+    color: var(--color-green);
+}
+
+footer .row .icons li {
+    width: 40px;
+    height: 40px;
+}
+
+footer .row .icons li:first-child {
+    background-color: #1877F2;
+}
+
+footer .row .icons li:nth-child(2) {
+    background-color: #1DA1F2;
+}
+
+footer .row .icons li:nth-child(3) {
+    background-color: #0077B5;
+}
+
+footer .row .icons li:last-child {
+    background-color: #FF0000;
+}
+
+/* End Footer */
